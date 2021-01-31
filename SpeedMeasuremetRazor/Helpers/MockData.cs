@@ -18,27 +18,27 @@ namespace SpeedMeasuremetRazor.Helpers
             {
                 return new List<Location>()
                 {
-                    new Location()
-                    {
-                        Id = 1,
-                        Address = "Maglegårdsvej 2",
-                        Zone = Zone.By,
-                        SpeedLimit = 50
-                    },
-                    new Location()
-                    {
-                        Id = 2,
-                        Address = "Frederiksborgvej 120",
-                        Zone = Zone.Motortrafikvej,
-                        SpeedLimit = 90
-                    },
-                    new Location()
-                    {
-                        Id = 3,
-                        Address = "Hillerødmotorvej 519",
-                        Zone = Zone.By,
-                        SpeedLimit = 130
-                    }
+                    //new Location()
+                    //{
+                    //    Id = 1,
+                    //    Address = "Maglegårdsvej 2",
+                    //    Zone = Zone.By,
+                    //    SpeedLimit = 50
+                    //},
+                    //new Location()
+                    //{
+                    //    Id = 2,
+                    //    Address = "Frederiksborgvej 120",
+                    //    Zone = Zone.Motortrafikvej,
+                    //    SpeedLimit = 90
+                    //},
+                    //new Location()
+                    //{
+                    //    Id = 3,
+                    //    Address = "Hillerødmotorvej 519",
+                    //    Zone = Zone.By,
+                    //    SpeedLimit = 130
+                    //}
                 };
             }
 
@@ -52,9 +52,9 @@ namespace SpeedMeasuremetRazor.Helpers
             {
                 List<SpeedMeasurement> measurements = new List<SpeedMeasurement>()
                 {
-                    new SpeedMeasurement(45,Locations[0], RandomImage),
-                    new SpeedMeasurement(80, Locations[1], RandomImage),
-                    new SpeedMeasurement(130, Locations[2], RandomImage)
+                    //new SpeedMeasurement(45,Locations[0], RandomImage),
+                    //new SpeedMeasurement(80, Locations[1], RandomImage),
+                    //new SpeedMeasurement(130, Locations[2], RandomImage)
                 };
                 return measurements;
             }
