@@ -8,5 +8,6 @@ namespace SpeedMeasuremetRazor.Models
     public enum Zone
     {
         
+
     }
 }
