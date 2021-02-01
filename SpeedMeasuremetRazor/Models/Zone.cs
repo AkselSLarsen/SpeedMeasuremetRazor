@@ -7,7 +7,8 @@ namespace SpeedMeasuremetRazor.Models
 {
     public enum Zone
     {
-        
-
+        By,
+        Motertrafikvej,
+        Motervej
     }
 }
