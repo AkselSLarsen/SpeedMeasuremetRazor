@@ -13,7 +13,7 @@ namespace SpeedMeasuremetRazor.Models
         private int _speed;
         private string _picture;
 
-        SpeedMeasurement(int speed, string picture) {
+       public SpeedMeasurement(int speed, string picture) {
             _id = _staticId++;
             // "var1 = ++var2;" is shorthand for "var2 + 1; var1 = var2;" whereas,
             // "var1 = var2++;" is shorthand for "var1 = var2; var2 + 1;".
