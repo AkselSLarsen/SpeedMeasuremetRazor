@@ -21,6 +21,9 @@ namespace SpeedMeasuremetRazor.Models
             Zone = zone;
         }
 
+        public Location() {
+        }
+
         public Zone Zone { get; set; }
         public int SpeedLimit
         {
