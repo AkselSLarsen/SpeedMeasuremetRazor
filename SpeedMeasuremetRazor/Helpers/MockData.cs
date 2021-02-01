@@ -16,30 +16,16 @@ namespace SpeedMeasuremetRazor.Helpers
         {
             get
             {
-                return new List<Location>()
+                if (_locations == null)
                 {
-                    new Location()
-                    {
-                        Id = 1,
-                        Address = "Maglegårdsvej 2",
-                        Zone = Zone.By,
-                        SpeedLimit = 50
-                    },
-                    new Location()
-                    {
-                        Id = 2,
-                        Address = "Frederiksborgvej 120",
-                        Zone = Zone.Motortrafikvej,
-                        SpeedLimit = 90
-                    },
-                    new Location()
-                    {
-                        Id = 3,
-                        Address = "Hillerødmotorvej 519",
-                        Zone = Zone.By,
-                        SpeedLimit = 130
-                    }
-                };
+                    _locations = new List<Location>();
+
+                    _locations.Add(new Location("Maglegårdsvej 2", 50, Zone.By));
+                    _locations.Add(new Location("Frederiksborgvej 120", 90, Zone.Motortrafikvej));
+                    _locations.Add(new Location("Hillerødmotorvej 519", 130, Zone.By));
+                }
+
+                return _locations;
             }
 
         }
