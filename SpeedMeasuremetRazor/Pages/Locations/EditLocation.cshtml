@@ -1,0 +1,27 @@
+﻿@page
+@using SpeedMeasuremetRazor.Models
+@model SpeedMeasuremetRazor.Pages.Locations.EditLocationModel
+@{
+}
+<form method="post" asp-page-handler="edit">
+    <input asp-for="@Model.Location.Id" type="hidden" />
+    <div class="form-group">
+        <label asp-for="@Model.Location.Address"></label>
+        <input asp-for="@Model.Location.Address" />
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Location.SpeedLimit"></label>
+        <input asp-for="@Model.Location.SpeedLimit" />
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Location.Zone"></label>
+        <select asp-for="@Model.Location.Zone" asp-items="Html.GetEnumSelectList<Zone>()">
+            <option></option>
+        </select>
+    </div>
+    <input type="submit" value="Edit" class="btn btn-primary" />
+</form>
+<form method="post" asp-page-handler="delete" style="margin-top: 16px">
+    <input asp-for="@Model.Location.Id" type="hidden" />
+    <input type="submit" value="Delete" class="btn btn-primary"/>
+</form>
