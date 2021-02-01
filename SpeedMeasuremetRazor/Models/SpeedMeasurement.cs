@@ -12,14 +12,16 @@ namespace SpeedMeasuremetRazor.Models
         private DateTime _timeStamp;
         private int _speed;
         private string _picture;
+        private Location _location;
 
-        SpeedMeasurement(int speed, string picture) {
+        SpeedMeasurement(int speed, string picture, Location location) {
             _id = _staticId++;
             // "var1 = ++var2;" is shorthand for "var2 + 1; var1 = var2;" whereas,
             // "var1 = var2++;" is shorthand for "var1 = var2; var2 + 1;".
             _timeStamp = DateTime.Now;
             _speed = speed;
             _picture = picture;
+            _location = location;
         }
 
         public int Id {
@@ -37,6 +39,10 @@ namespace SpeedMeasuremetRazor.Models
         public DateTime TimeStamp {
             get { return _timeStamp; }
             set { _timeStamp = value; }
+        }
+        public Location Location {
+            get { return _location; }
+            set { _location = value; }
         }
     }
 }
