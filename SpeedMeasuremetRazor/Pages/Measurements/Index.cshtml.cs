@@ -20,11 +20,12 @@ namespace SpeedMeasuremetRazor.Pages.Measurements
 
         public void OnGet()
         {
+
         }
 
-        public IActionResult OnPost(int id)
+        public IActionResult OnPost(int deletemeasurement)
         {
-            repo.DeleteSpeedMeasurement(id);
+            repo.DeleteSpeedMeasurement(deletemeasurement);
             return Page();
         }
     }

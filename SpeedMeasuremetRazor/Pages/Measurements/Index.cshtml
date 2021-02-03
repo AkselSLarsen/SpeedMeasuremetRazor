@@ -13,33 +13,35 @@
 
 <table class="table">
     <thead>
-    <tr>
-        <th>Measurement ID</th>
-        <th>Speed Registered</th>
-        <th>Time Stamp</th>
-        <th>Address</th>
-        <th>Zone</th>
-        <th>Speed Limit</th>
-        <th>Photo</th>
-        <th></th>
+        <tr>
+            <th>Measurement ID</th>
+            <th>Speed Registered</th>
+            <th>Time Stamp</th>
+            <th>Address</th>
+            <th>Zone</th>
+            <th>Speed Limit</th>
+            <th>Photo</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
         @foreach (SpeedMeasurement measurement in Model.repo.GetAllSpeedMeasurements())
         {
-            <td>@measurement.Id</td>
-            <td>@measurement.Speed</td>
-            <td>@measurement.TimeStamp</td>
-            <td>@measurement.Location.Address</td>
-            <td>@measurement.Location.Zone</td>
-            <td>@measurement.Location.SpeedLimit</td>
-            <td><img src="Images/@measurement.Picture"/></td>
-            <td>
-                <form method="post">
-                    <button class="btn btn-danger">Delete</button>
-                    <input type="hidden" name="deletemeasurement" value="@measurement.Id"/>
-                </form>
-            </td>
+            <tr>
+                <td>@measurement.Id</td>
+                <td>@measurement.Speed</td>
+                <td>@measurement.TimeStamp</td>
+                <td>@measurement.Location.Address</td>
+                <td>@measurement.Location.Zone</td>
+                <td>@measurement.Location.SpeedLimit</td>
+                <td><img src="Images/@measurement.Picture" /></td>
+                <td>
+                    <form method="post">
+                        <button class="btn btn-danger">Delete</button>
+                        <input type="hidden" name="deletemeasurement" value="@measurement.Id" />
+                    </form>
+                </td>
+            </tr>
         }
     </tbody>
 </table>
