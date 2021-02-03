@@ -38,9 +38,9 @@ namespace SpeedMeasuremetRazor.Helpers
             {
                 List<SpeedMeasurement> measurements = new List<SpeedMeasurement>()
                 {
-                    //new SpeedMeasurement(45,Locations[0], RandomImage),
-                    //new SpeedMeasurement(80, Locations[1], RandomImage),
-                    //new SpeedMeasurement(130, Locations[2], RandomImage)
+                    new SpeedMeasurement(45,RandomImage,Locations[0]),
+                    new SpeedMeasurement(80,RandomImage, Locations[1]),
+                    new SpeedMeasurement(130,RandomImage, Locations[2] )
                 };
                 return measurements;
             }

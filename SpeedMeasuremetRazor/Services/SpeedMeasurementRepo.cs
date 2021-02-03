@@ -14,7 +14,7 @@ namespace SpeedMeasuremetRazor.Services
 
         public SpeedMeasurementRepo()
         {
-            _speedMeasurements = new List<SpeedMeasurement>();
+            _speedMeasurements = MockData.Measurements;
         }
         public List<SpeedMeasurement> GetAllSpeedMeasurements()
         {
