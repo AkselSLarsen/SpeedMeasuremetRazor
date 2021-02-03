@@ -9,13 +9,9 @@ using SpeedMeasuremetRazor.Models;
 
 namespace SpeedMeasuremetRazor.Services
 {
-    
-
     public class LocationRepo : ILocationRepo
     {
         private List<Location> _locations;
-
-        
 
         public LocationRepo()
         {

@@ -13,6 +13,7 @@ namespace SpeedMeasuremetRazor.Models
         private string _address;
         private int _speedLimit;
 
+        //test
         public Location(string address, int speedLimit, Zone zone)
         {
             _id = _staticId++;

@@ -9,6 +9,6 @@ namespace SpeedMeasuremetRazor.Models
     {
         By,
         Motortrafikvej,
-        Motervej
+        Motorvej
     }
 }
