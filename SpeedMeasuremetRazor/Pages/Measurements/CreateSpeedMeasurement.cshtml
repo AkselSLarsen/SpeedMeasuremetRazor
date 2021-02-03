@@ -1,4 +1,31 @@
 ﻿@page
+@using SpeedMeasuremetRazor.Models
 @model SpeedMeasuremetRazor.Pages.Measurements.CreateSpeedMeasurementModel
 @{
 }
+
+<h1>Create Speed Measurement</h1>
+
+<img src="~/Images/viewfinder.JPG" alt="View Finder Picture" />
+
+<p>Choose a location</p>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="@Model.Id"></label>
+        <select asp-for="@Model.Id">
+            @foreach (Location location in @Model.LocationRepo.GetAllLocations()) {
+                <option value="@location.Id">@location.Address</option>
+            }
+        </select>
+    </div>
+
+    <input type="submit" value="Press the button to take a photo" class="btn btn-primary" />
+</form>
+
+<img src="~/Images/camera-button.jpg" alt="Camera outline" />
+
+<div class="alert alert-info alert-primary">
+    @Model.message
+</div>
+

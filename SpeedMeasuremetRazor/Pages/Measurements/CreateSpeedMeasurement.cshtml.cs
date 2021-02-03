@@ -4,13 +4,49 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using SpeedMeasuremetRazor.Helpers;
+using SpeedMeasuremetRazor.Interfaces;
+using SpeedMeasuremetRazor.Models;
+using SpeedMeasuremetRazor.Services;
 
 namespace SpeedMeasuremetRazor.Pages.Measurements
 {
     public class CreateSpeedMeasurementModel : PageModel
     {
+        private SpeedMeasurementRepo _measurementRepo;
+        private LocationRepo _locationRepo;
+        public string message;
+
+        public SpeedMeasurementRepo MeasurementRepo {
+            get { return _measurementRepo; }
+            set { _measurementRepo = value; }
+        }
+
+        public LocationRepo LocationRepo {
+            get { return _locationRepo; }
+            set { _locationRepo = value; }
+        }
+
+        [BindProperty]
+        public int Id { get; set; }
+
+        public CreateSpeedMeasurementModel(ILocationRepo locRepo, ISpeedMeasurementRepo speedRepo) {
+            _locationRepo = (LocationRepo)locRepo;
+            _measurementRepo = (SpeedMeasurementRepo)speedRepo;
+            message = "Look in the viewfinder and press the button";
+        }
+
         public void OnGet()
         {
+            
+        }
+
+        public IActionResult OnPost() {
+            Location loc = LocationRepo.GetLocation(Id);
+            Random random = new Random();
+            MeasurementRepo.AddSpeedMeasurement(random.Next(-20, 376), loc, MockData.RandomImage);
+
+            return RedirectToPage("Index");
         }
     }
 }
