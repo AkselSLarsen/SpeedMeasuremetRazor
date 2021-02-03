@@ -8,7 +8,7 @@ namespace SpeedMeasuremetRazor.Models
     public class SpeedMeasurement
     {
         private int _id;
-        private static int _staticId;
+        private static int _staticId = 1;
         private DateTime _timeStamp;
         private int _speed;
         private string _picture;
