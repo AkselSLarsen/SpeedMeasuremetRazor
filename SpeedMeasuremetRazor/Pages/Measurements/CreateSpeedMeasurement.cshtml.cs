@@ -27,8 +27,6 @@ namespace SpeedMeasuremetRazor.Pages.Measurements
             set { _locationRepo = value; }
         }
 
-        [BindProperty]
-        public int Id { get; set; }
 
         public CreateSpeedMeasurementModel(ILocationRepo locRepo, ISpeedMeasurementRepo speedRepo) {
             _locationRepo = (LocationRepo)locRepo;
@@ -41,8 +39,8 @@ namespace SpeedMeasuremetRazor.Pages.Measurements
             
         }
 
-        public IActionResult OnPost() {
-            Location loc = LocationRepo.GetLocation(Id);
+        public IActionResult OnPost(int locId) {
+            Location loc = LocationRepo.GetLocation(locId);
             Random random = new Random();
             MeasurementRepo.AddSpeedMeasurement(random.Next(-20, 376), loc, MockData.RandomImage);
 
