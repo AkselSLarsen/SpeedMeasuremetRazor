@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using SpeedMeasuremetRazor.Exceptions;
 
 namespace SpeedMeasuremetRazor.Models
 {
@@ -14,7 +15,15 @@ namespace SpeedMeasuremetRazor.Models
         private string _picture;
         private Location _location;
 
-       public SpeedMeasurement(int speed, string picture, Location location) {
+        public SpeedMeasurement(int speed, string picture, Location location) {
+            //if(0>speed || 300 < speed)
+            //{
+            //    throw new ArgumentException("Du må ikke have speed på over 300 eller mindre end 0!");
+            //}
+            if(0>speed || 300 < speed)
+            {
+                throw new CalibrationException("Du  må ikke have speed på over 300 eller mindre end 0!");
+            }
             _id = _staticId++;
             // "var1 = ++var2;" is shorthand for "var2 + 1; var1 = var2;" whereas,
             // "var1 = var2++;" is shorthand for "var1 = var2; var2 + 1;".
