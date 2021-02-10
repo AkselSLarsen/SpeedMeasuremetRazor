@@ -14,6 +14,28 @@
 <table class="table">
     <thead>
         <tr>
+            <th>All</th>
+            <th>OverSpeedLimit</th>
+            <th>CutInLicense</th>
+            <th>ConditionalRevocation</th>
+            <th>UnconditionalRevocation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.repo.GetAllSpeedMeasurements().Count</td>
+            <td>@Model.repo.NoOfOverSpeedLimit()</td>
+            <td>@Model.repo.NoOfCutInLicense()</td>
+            <td>@Model.repo.NoOfConditionalRevocation()</td>
+            <td>@Model.repo.NoOfUnconditionalRevocation()</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<table class="table">
+    <thead>
+        <tr>
             <th>Measurement ID</th>
             <th>Speed Registered</th>
             <th>Time Stamp</th>

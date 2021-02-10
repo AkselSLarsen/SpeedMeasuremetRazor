@@ -12,6 +12,7 @@ namespace SpeedMeasuremetRazor.Interfaces
         int NoOfCutInLicense();
         int NoOfCutInLicenseForeach();
         int NoOfConditionalRevocation();
+        int NoOfUnconditionalRevocation();
         void DeleteSpeedMeasurement(int id);
     }
 }

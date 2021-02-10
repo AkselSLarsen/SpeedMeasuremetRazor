@@ -100,6 +100,17 @@ namespace SpeedMeasuremetRazor.Services
             return cutinLicense;
         }
 
+        public int NoOfUnconditionalRevocation() {
+            int cutinLicense = 0;
+            foreach (SpeedMeasurement speedMeasurement in _speedMeasurements) {
+                if (speedMeasurement.Location.SpeedLimit * 2 < speedMeasurement.Speed && speedMeasurement.Speed > 100) {
+                    cutinLicense++;
+                }
+            }
+
+            return cutinLicense;
+        }
+
         public void DeleteSpeedMeasurement(int id)
         {
             SpeedMeasurement toBeDelted = null;

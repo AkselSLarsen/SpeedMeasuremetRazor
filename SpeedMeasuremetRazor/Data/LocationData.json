@@ -16,29 +16,5 @@
     "SpeedLimit": 90,
     "Address": "Frederiksborgvej 537",
     "Id": 3
-  },
-  {
-    "Zone": 1,
-    "SpeedLimit": 123,
-    "Address": "Gedvej 4",
-    "Id": 12
-  },
-  {
-    "Zone": 0,
-    "SpeedLimit": 56,
-    "Address": "Gedvej 5",
-    "Id": 25
-  },
-  {
-    "Zone": 2,
-    "SpeedLimit": 8,
-    "Address": "Gedvej 6",
-    "Id": 0
-  },
-  {
-    "Zone": 0,
-    "SpeedLimit": 351265,
-    "Address": "Gedvej 7",
-    "Id": 19
   }
 ]
