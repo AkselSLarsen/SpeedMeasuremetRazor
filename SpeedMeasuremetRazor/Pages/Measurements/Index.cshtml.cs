@@ -27,17 +27,21 @@ namespace SpeedMeasuremetRazor.Pages.Measurements
 
         public IActionResult OnPostFilter(int filter)
         {
-            if(filter == 1)
+            if (filter == 1)
+            {
+                filterList = fullRepo.GetAllSpeedMeasurements();
+            }
+            if(filter == 2)
             {
                 filterList = fullRepo.CutInLicense();
             }
 
-            if (filter == 2)
+            if (filter == 3)
             {
                 filterList = fullRepo.ConditionalRevocation();
             }
 
-            if (filter == 3)
+            if (filter == 4)
             {
                 filterList = fullRepo.UnconditionalRevocation();
             }

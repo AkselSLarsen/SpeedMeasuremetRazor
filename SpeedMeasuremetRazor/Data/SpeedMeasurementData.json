@@ -46,5 +46,17 @@
       "Address": "Frederiksborgvej 537",
       "Id": 3
     }
+  },
+  {
+    "Id": 5,
+    "Picture": "olsenbanden.jfif",
+    "Speed": 35,
+    "TimeStamp": "2021-02-10T14:50:26.7335532+01:00",
+    "Location": {
+      "Zone": 0,
+      "SpeedLimit": 50,
+      "Address": "Maglegårdsvej 2",
+      "Id": 1
+    }
   }
 ]
