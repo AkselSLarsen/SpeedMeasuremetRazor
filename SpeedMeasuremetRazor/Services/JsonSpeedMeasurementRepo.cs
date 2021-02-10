@@ -16,6 +16,10 @@ namespace SpeedMeasuremetRazor.Services
         public JsonSpeedMeasurementRepo()
         {
             _speedMeasurements = JsonHelper.ReadMeasurements(filepath);
+
+            if(_speedMeasurements == null) {
+                _speedMeasurements = new List<SpeedMeasurement>();
+            }
         }
 
         public List<SpeedMeasurement> GetAllSpeedMeasurements()
@@ -25,8 +29,22 @@ namespace SpeedMeasuremetRazor.Services
 
         public void AddSpeedMeasurement(int speed, Location location, string imageName)
         {
-            _speedMeasurements.Add(new SpeedMeasurement(speed, imageName, location));
+            SpeedMeasurement toBeAdded = new SpeedMeasurement(speed, imageName, location);
+            int id = 1;
+            while(!isUniqueId(id)) {
+                id++;
+            }
+            toBeAdded.Id = id;
+            _speedMeasurements.Add(toBeAdded);
             JsonHelper.WriteMeasurements(_speedMeasurements, filepath);
+        }
+        private bool isUniqueId(int id) {
+            foreach(SpeedMeasurement sm in _speedMeasurements) {
+                if(id == sm.Id) {
+                    return false;
+                }
+            }
+            return true;
         }
 
         public double AvarageSpeed()
