@@ -1,0 +1,158 @@
+[
+  {
+    "Id": 6,
+    "Picture": "olsenbanden.jfif",
+    "Speed": 295,
+    "TimeStamp": "2021-02-10T12:53:28.5924968+01:00",
+    "Location": {
+      "Zone": 0,
+      "SpeedLimit": 50,
+      "Address": "Maglegårdsvej 2",
+      "Id": 1
+    }
+  },
+  {
+    "Id": 10,
+    "Picture": "greycar.jfif",
+    "Speed": 183,
+    "TimeStamp": "2021-02-10T12:53:32.7174846+01:00",
+    "Location": {
+      "Zone": 1,
+      "SpeedLimit": 110,
+      "Address": "Hillerødmotorvejen 123",
+      "Id": 2
+    }
+  },
+  {
+    "Id": 17,
+    "Picture": "whitetruck.jfif",
+    "Speed": 250,
+    "TimeStamp": "2021-02-10T12:53:35.9423196+01:00",
+    "Location": {
+      "Zone": 1,
+      "SpeedLimit": 90,
+      "Address": "Frederiksborgvej 537",
+      "Id": 3
+    }
+  },
+  {
+    "Id": 27,
+    "Picture": "veteran.jfif",
+    "Speed": 115,
+    "TimeStamp": "2021-02-10T12:54:19.1963006+01:00",
+    "Location": {
+      "Zone": 0,
+      "SpeedLimit": 50,
+      "Address": "Maglegårdsvej 2",
+      "Id": 1
+    }
+  },
+  {
+    "Id": 40,
+    "Picture": "c1.jfif",
+    "Speed": 202,
+    "TimeStamp": "2021-02-10T12:54:22.4617842+01:00",
+    "Location": {
+      "Zone": 1,
+      "SpeedLimit": 110,
+      "Address": "Hillerødmotorvejen 123",
+      "Id": 2
+    }
+  },
+  {
+    "Id": 56,
+    "Picture": "c1.jfif",
+    "Speed": 227,
+    "TimeStamp": "2021-02-10T12:54:25.223937+01:00",
+    "Location": {
+      "Zone": 1,
+      "SpeedLimit": 90,
+      "Address": "Frederiksborgvej 537",
+      "Id": 3
+    }
+  },
+  {
+    "Id": 87,
+    "Picture": "c1.jfif",
+    "Speed": 167,
+    "TimeStamp": "2021-02-10T12:55:20.8793483+01:00",
+    "Location": {
+      "Zone": 0,
+      "SpeedLimit": 50,
+      "Address": "Maglegårdsvej 2",
+      "Id": 1
+    }
+  },
+  {
+    "Id": 109,
+    "Picture": "greycar.jfif",
+    "Speed": 189,
+    "TimeStamp": "2021-02-10T12:55:39.1476266+01:00",
+    "Location": {
+      "Zone": 1,
+      "SpeedLimit": 110,
+      "Address": "Hillerødmotorvejen 123",
+      "Id": 2
+    }
+  },
+  {
+    "Id": 134,
+    "Picture": "veteran.jfif",
+    "Speed": 200,
+    "TimeStamp": "2021-02-10T12:55:51.9443535+01:00",
+    "Location": {
+      "Zone": 1,
+      "SpeedLimit": 90,
+      "Address": "Frederiksborgvej 537",
+      "Id": 3
+    }
+  },
+  {
+    "Id": 28,
+    "Picture": "whitecar.jfif",
+    "Speed": 133,
+    "TimeStamp": "2021-02-10T14:07:06.8512213+01:00",
+    "Location": {
+      "Zone": 0,
+      "SpeedLimit": 50,
+      "Address": "Maglegårdsvej 2",
+      "Id": 1
+    }
+  },
+  {
+    "Id": 69,
+    "Picture": "whitetruck.jfif",
+    "Speed": 174,
+    "TimeStamp": "2021-02-10T14:07:17.2301027+01:00",
+    "Location": {
+      "Zone": 0,
+      "SpeedLimit": 50,
+      "Address": "Maglegårdsvej 2",
+      "Id": 1
+    }
+  },
+  {
+    "Id": 103,
+    "Picture": "whitetruck.jfif",
+    "Speed": 168,
+    "TimeStamp": "2021-02-10T14:07:26.1830488+01:00",
+    "Location": {
+      "Zone": 1,
+      "SpeedLimit": 110,
+      "Address": "Hillerødmotorvejen 123",
+      "Id": 2
+    }
+  },
+  {
+    "Id": 164,
+    "Picture": "whitecar.jfif",
+    "Speed": 139,
+    "TimeStamp": "2021-02-10T14:07:45.6903324+01:00",
+    "Location": {
+      "Zone": 1,
+      "SpeedLimit": 110,
+      "Address": "Hillerødmotorvejen 123",
+      "Id": 2
+    }
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "Zone": 0,
+    "SpeedLimit": 50,
+    "Address": "Maglegårdsvej 2",
+    "Id": 1
+  },
+  {
+    "Zone": 1,
+    "SpeedLimit": 110,
+    "Address": "Hillerødmotorvejen 123",
+    "Id": 2
+  },
+  {
+    "Zone": 1,
+    "SpeedLimit": 90,
+    "Address": "Frederiksborgvej 537",
+    "Id": 3
+  }
+]

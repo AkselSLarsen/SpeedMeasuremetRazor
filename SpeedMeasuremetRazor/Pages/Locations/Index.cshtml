@@ -1,0 +1,33 @@
+﻿@page
+@model SpeedMeasuremetRazor.Pages.Locations.IndexModel
+@{
+}
+
+<h1>List of Locations</h1>
+
+<p>Number of Locations: @Model.LocationRepo.GetAllLocations().Count</p>
+
+<a asp-page="CreateLocation">Create New Location</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Address</th>
+            <th>Zone</th>
+            <th>SpeedLimit</th>
+            <th>Control</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var location in Model.LocationRepo.GetAllLocations()) { 
+        <tr>
+            <td>@location.Id</td>
+            <td>@location.Address</td>
+            <td>@location.Zone</td>
+            <td>@location.SpeedLimit</td>
+            <td><a asp-route-id="@location.Id" asp-page="EditLocation">Edit or Delete Location</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
