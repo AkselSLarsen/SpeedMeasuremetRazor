@@ -17,7 +17,6 @@ namespace SpeedMeasuremetRazor.Services
         {
             _speedMeasurements = JsonHelper.ReadMeasurements(filepath);
 
-            if(_speedMeasurements == null) {
             if(_speedMeasurements == null)
             {
                 _speedMeasurements = new List<SpeedMeasurement>();
