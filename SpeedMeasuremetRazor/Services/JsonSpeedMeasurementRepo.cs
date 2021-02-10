@@ -118,6 +118,23 @@ namespace SpeedMeasuremetRazor.Services
 
             return cutinLicense;
         }
+        public List<SpeedMeasurement> ConditionalRevocation()
+        {
+            List<SpeedMeasurement> l = new List<SpeedMeasurement>();
+            foreach (SpeedMeasurement speedMeasurement in _speedMeasurements)
+            {
+                if (speedMeasurement.Location.SpeedLimit * 1.3 < speedMeasurement.Speed && speedMeasurement.Location.SpeedLimit == 130)
+                {
+                    l.Add(speedMeasurement);
+                }
+                else if (speedMeasurement.Location.SpeedLimit * 1.6 < speedMeasurement.Speed)
+                {
+                    l.Add(speedMeasurement);
+                }
+            }
+
+            return l;
+        }
 
         public int NoOfUnconditionalRevocation() {
             int cutinLicense = 0;
@@ -128,6 +145,19 @@ namespace SpeedMeasuremetRazor.Services
             }
 
             return cutinLicense;
+        }
+        public List<SpeedMeasurement> UnconditionalRevocation()
+        {
+            List<SpeedMeasurement> l = new List<SpeedMeasurement>();
+            foreach (SpeedMeasurement speedMeasurement in _speedMeasurements)
+            {
+                if (speedMeasurement.Location.SpeedLimit * 2 < speedMeasurement.Speed && speedMeasurement.Speed > 100)
+                {
+                    l.Add(speedMeasurement);
+                }
+            }
+
+            return l;
         }
 
         public void DeleteSpeedMeasurement(int id)

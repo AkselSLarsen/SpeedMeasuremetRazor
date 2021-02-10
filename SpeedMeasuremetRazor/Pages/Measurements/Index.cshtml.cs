@@ -32,6 +32,16 @@ namespace SpeedMeasuremetRazor.Pages.Measurements
             {
                 filterList = fullRepo.CutInLicense();
             }
+
+            if (filter == 2)
+            {
+                filterList = fullRepo.ConditionalRevocation();
+            }
+
+            if (filter == 3)
+            {
+                filterList = fullRepo.UnconditionalRevocation();
+            }
             return Page();
         }
         public IActionResult OnPost(int deletemeasurement)
