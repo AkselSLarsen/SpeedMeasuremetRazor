@@ -13,10 +13,10 @@ namespace SpeedMeasuremetRazor.Pages.Locations
     public class EditLocationModel : PageModel
     {
         private Location _location;
-        private LocationRepo _locationRepo;
+        private ILocationRepo _locationRepo;
         public EditLocationModel(ILocationRepo locationRepo)
         {
-            _locationRepo = (LocationRepo)locationRepo;
+            _locationRepo = locationRepo;
         }
         [BindProperty]
         public Location Location

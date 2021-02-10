@@ -11,15 +11,15 @@ namespace SpeedMeasuremetRazor.Pages.Locations
 {
     public class IndexModel : PageModel
     {
-        private LocationRepo _locationRepo;
+        private ILocationRepo _locationRepo;
 
-        public LocationRepo LocationRepo {
+        public ILocationRepo LocationRepo {
             get { return _locationRepo; }
             set { _locationRepo = value; }
         }
 
         public IndexModel(ILocationRepo locationRepo) {
-            _locationRepo = (LocationRepo)locationRepo;
+            _locationRepo = (ILocationRepo)locationRepo;
         }
 
         public void OnGet()

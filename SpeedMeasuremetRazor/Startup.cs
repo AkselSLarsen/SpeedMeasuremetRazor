@@ -25,11 +25,11 @@ namespace SpeedMeasuremetRazor
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            services.AddSingleton<ILocationRepo, LocationRepo>();
-            services.AddSingleton<ISpeedMeasurementRepo, SpeedMeasurementRepo>();
+            //services.AddSingleton<ILocationRepo, LocationRepo>();
+            //services.AddSingleton<ISpeedMeasurementRepo, SpeedMeasurementRepo>();
 
-            //services.AddTransient<ILocationRepo, JsonLocationRepo>();
-            //services.AddTransient<ISpeedMeasurementRepo, JsonSpeedMeasurementRepo>();
+            services.AddTransient<ILocationRepo, JsonLocationRepo>();
+            services.AddTransient<ISpeedMeasurementRepo, JsonSpeedMeasurementRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

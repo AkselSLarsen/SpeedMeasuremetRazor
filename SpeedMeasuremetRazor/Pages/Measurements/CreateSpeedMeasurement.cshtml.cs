@@ -14,24 +14,24 @@ namespace SpeedMeasuremetRazor.Pages.Measurements
 {
     public class CreateSpeedMeasurementModel : PageModel
     {
-        private SpeedMeasurementRepo _measurementRepo;
-        private LocationRepo _locationRepo;
+        private ISpeedMeasurementRepo _measurementRepo;
+        private ILocationRepo _locationRepo;
         public string message;
 
-        public SpeedMeasurementRepo MeasurementRepo {
+        public ISpeedMeasurementRepo MeasurementRepo {
             get { return _measurementRepo; }
             set { _measurementRepo = value; }
         }
 
-        public LocationRepo LocationRepo {
+        public ILocationRepo LocationRepo {
             get { return _locationRepo; }
             set { _locationRepo = value; }
         }
 
 
         public CreateSpeedMeasurementModel(ILocationRepo locRepo, ISpeedMeasurementRepo speedRepo) {
-            _locationRepo = (LocationRepo)locRepo;
-            _measurementRepo = (SpeedMeasurementRepo)speedRepo;
+            _locationRepo = locRepo;
+            _measurementRepo = speedRepo;
             message = "Look in the viewfinder and press the button";
         }
 
