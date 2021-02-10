@@ -9,7 +9,6 @@ namespace SpeedMeasuremetRazor.Models
     public class SpeedMeasurement
     {
         private int _id;
-        private static int _staticId = 1;
         private DateTime _timeStamp;
         private int _speed;
         private string _picture;
@@ -24,7 +23,6 @@ namespace SpeedMeasuremetRazor.Models
             {
                 throw new CalibrationException("Du  må ikke have speed på over 300 eller mindre end 0!");
             }
-            _id = _staticId++;
             // "var1 = ++var2;" is shorthand for "var2 + 1; var1 = var2;" whereas,
             // "var1 = var2++;" is shorthand for "var1 = var2; var2 + 1;".
             _timeStamp = DateTime.Now;

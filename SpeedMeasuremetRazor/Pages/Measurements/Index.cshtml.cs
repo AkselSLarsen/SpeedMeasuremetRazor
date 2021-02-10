@@ -12,7 +12,6 @@ namespace SpeedMeasuremetRazor.Pages.Measurements
 {
     public class IndexModel : PageModel
     {
-        public ISpeedMeasurementRepo repo;
         public List<SpeedMeasurement> filterList;
         public JsonSpeedMeasurementRepo fullRepo;
         public IndexModel(ISpeedMeasurementRepo repository)
@@ -46,7 +45,7 @@ namespace SpeedMeasuremetRazor.Pages.Measurements
         }
         public IActionResult OnPost(int deletemeasurement)
         {
-            repo.DeleteSpeedMeasurement(deletemeasurement);
+            fullRepo.DeleteSpeedMeasurement(deletemeasurement);
             return Page();
         }
     }

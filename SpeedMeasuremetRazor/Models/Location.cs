@@ -9,14 +9,12 @@ namespace SpeedMeasuremetRazor.Models
     public class Location
     {
         private int _id;
-        private static int _staticId = 1;
         private string _address;
         private int _speedLimit;
 
         //test
         public Location(string address, int speedLimit, Zone zone)
         {
-            _id = _staticId++;
             _address = address;
             _speedLimit = speedLimit;
             Zone = zone;
@@ -24,7 +22,6 @@ namespace SpeedMeasuremetRazor.Models
 
         public Location()
         {
-            _id = _staticId++;
         }
         
 

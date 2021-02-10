@@ -16,6 +16,9 @@ namespace SpeedMeasuremetRazor.Services
         {
             _locations = JsonHelper.ReadLocations(filepath);
 
+            if(_locations == null) {
+                _locations = new List<Location>();
+            }
         }
 
         public List<Location> GetAllLocations()
@@ -23,10 +26,25 @@ namespace SpeedMeasuremetRazor.Services
             return _locations;
         }
 
-        public void AddLocation(Location location)
+        public void AddLocation(string address, int speedLimit, Zone zone)
         {
+            Location location = new Location(address, speedLimit, zone);
+            int id = 1;
+            while(!isUnique(id)) {
+                id++;
+            }
+            location.Id = id;
+
             _locations.Add(location);
             JsonHelper.WriteLocation(_locations,filepath);
+        }
+        private bool isUnique(int id) {
+            foreach(Location l in _locations) {
+                if(id == l.Id) {
+                    return false;
+                }
+            }
+            return true;
         }
 
         public void UpdateLocation(Location location)
