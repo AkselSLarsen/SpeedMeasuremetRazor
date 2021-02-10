@@ -18,6 +18,8 @@ namespace SpeedMeasuremetRazor.Services
             _speedMeasurements = JsonHelper.ReadMeasurements(filepath);
 
             if(_speedMeasurements == null) {
+            if(_speedMeasurements == null)
+            {
                 _speedMeasurements = new List<SpeedMeasurement>();
             }
         }
@@ -142,6 +144,19 @@ namespace SpeedMeasuremetRazor.Services
 
             _speedMeasurements.Remove(toBeDelted);
             JsonHelper.WriteMeasurements(_speedMeasurements,filepath);
+        }
+        public List<SpeedMeasurement> CutInLicense()
+        {
+            List<SpeedMeasurement> l = new List<SpeedMeasurement>();
+            for (int i = 0; i < _speedMeasurements.Count; i++)
+            {
+                if (_speedMeasurements[i].Location.SpeedLimit * 1.3 < _speedMeasurements[i].Speed)
+                {
+                    l.Add(_speedMeasurements[i]);
+                }
+            }
+
+            return l;
         }
     }
 }

@@ -6,7 +6,7 @@
 
 <h1>List of Speed Measurements</h1>
 
-<p>Number of registrations: @Model.repo.GetAllSpeedMeasurements().Count</p>
+<p>Number of registrations: @Model.fullRepo.GetAllSpeedMeasurements().Count</p>
 
 
 <a class="nav-link" asp-area="" asp-page="CreateSpeedMeasurement">Create Measurement</a>
@@ -23,15 +23,23 @@
     </thead>
     <tbody>
         <tr>
-            <td>@Model.repo.GetAllSpeedMeasurements().Count</td>
-            <td>@Model.repo.NoOfOverSpeedLimit()</td>
-            <td>@Model.repo.NoOfCutInLicense()</td>
-            <td>@Model.repo.NoOfConditionalRevocation()</td>
-            <td>@Model.repo.NoOfUnconditionalRevocation()</td>
+            <td>@Model.fullRepo.GetAllSpeedMeasurements().Count</td>
+            <td>@Model.fullRepo.NoOfOverSpeedLimit()</td>
+            <td>@Model.fullRepo.NoOfCutInLicense()</td>
+            <td>@Model.fullRepo.NoOfConditionalRevocation()</td>
+            <td>@Model.fullRepo.NoOfUnconditionalRevocation()</td>
         </tr>
     </tbody>
 </table>
+<form method="post" asp-page-handler="filter">
+    <div class="form-group">
+        <select name="filter">
+                <option value="1">CutInLicense</option>
+        </select>
+    </div>
 
+    <input type="submit" value="Filter" class="btn btn-primary" />
+</form>
 
 <table class="table">
     <thead>
@@ -47,7 +55,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (SpeedMeasurement measurement in Model.repo.GetAllSpeedMeasurements())
+        @foreach (SpeedMeasurement measurement in Model.filterList)
         {
             <tr>
                 <td>@measurement.Id</td>
