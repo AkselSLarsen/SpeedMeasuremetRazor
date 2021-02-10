@@ -29,7 +29,7 @@ namespace SpeedMeasuremetRazor.Pages.Locations
 
         public IActionResult OnPost()
         {
-            repo.AddLocation(Location);
+            repo.AddLocation(Location.Address, Location.SpeedLimit, Location.Zone);
             return RedirectToPage("Index");
         }
     }

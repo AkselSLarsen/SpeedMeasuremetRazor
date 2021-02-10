@@ -23,9 +23,9 @@ namespace SpeedMeasuremetRazor.Services
             return _locations;
         }
 
-        public void AddLocation(Location location)
+        public void AddLocation(string address, int speedLimit, Zone zone)
         {
-            _locations.Add(location);
+            _locations.Add(new Location(address, speedLimit, zone));
         }
 
         public void UpdateLocation(Location location)

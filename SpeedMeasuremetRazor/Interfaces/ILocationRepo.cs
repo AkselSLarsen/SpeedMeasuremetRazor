@@ -9,7 +9,7 @@ namespace SpeedMeasuremetRazor.Interfaces
     public interface ILocationRepo
     {
         List<Location> GetAllLocations();
-        void AddLocation(Location location);
+        void AddLocation(string address, int speedLimit, Zone zone);
         void UpdateLocation(Location location);
 
         Location GetLocation(int id);

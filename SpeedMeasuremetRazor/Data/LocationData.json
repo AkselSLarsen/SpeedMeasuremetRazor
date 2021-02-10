@@ -16,5 +16,11 @@
     "SpeedLimit": 90,
     "Address": "Frederiksborgvej 537",
     "Id": 3
+  },
+  {
+    "Zone": 0,
+    "SpeedLimit": 45,
+    "Address": "Gedvej 4",
+    "Id": 4
   }
 ]
