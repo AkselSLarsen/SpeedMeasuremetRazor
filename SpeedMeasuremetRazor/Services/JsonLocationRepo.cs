@@ -14,7 +14,7 @@ namespace SpeedMeasuremetRazor.Services
         private List<Location> _locations;
         public JsonLocationRepo()
         {
-            _locations = JsonHelper.ReadLocations(filepath);
+            _locations = JsonHelper.Read<Location>(filepath);
 
             if(_locations == null) {
                 _locations = new List<Location>();
@@ -36,7 +36,7 @@ namespace SpeedMeasuremetRazor.Services
             location.Id = id;
 
             _locations.Add(location);
-            JsonHelper.WriteLocation(_locations,filepath);
+            JsonHelper.Write<Location>(_locations,filepath);
         }
         private bool isUnique(int id) {
             foreach(Location l in _locations) {
@@ -53,7 +53,7 @@ namespace SpeedMeasuremetRazor.Services
             toBeChanged.Address = location.Address;
             toBeChanged.SpeedLimit = location.SpeedLimit;
             toBeChanged.Zone = location.Zone;
-            JsonHelper.WriteLocation(_locations,filepath);
+            JsonHelper.Write<Location>(_locations,filepath);
         }
 
         public Location GetLocation(int id)
@@ -73,7 +73,7 @@ namespace SpeedMeasuremetRazor.Services
         public void DeleteLocation(int id)
         {
             _locations.Remove(GetLocation(id));
-            JsonHelper.WriteLocation(_locations,filepath);
+            JsonHelper.Write<Location>(_locations,filepath);
         }
     }
 }

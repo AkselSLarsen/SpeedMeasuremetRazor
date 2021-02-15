@@ -15,7 +15,7 @@ namespace SpeedMeasuremetRazor.Services
 
         public JsonSpeedMeasurementRepo()
         {
-            _speedMeasurements = JsonHelper.ReadMeasurements(filepath);
+            _speedMeasurements = JsonHelper.Read<SpeedMeasurement>(filepath);
 
             if(_speedMeasurements == null)
             {
@@ -37,7 +37,7 @@ namespace SpeedMeasuremetRazor.Services
             }
             toBeAdded.Id = id;
             _speedMeasurements.Add(toBeAdded);
-            JsonHelper.WriteMeasurements(_speedMeasurements, filepath);
+            JsonHelper.Write<SpeedMeasurement>(_speedMeasurements, filepath);
         }
         private bool isUniqueId(int id) {
             foreach(SpeedMeasurement sm in _speedMeasurements) {
@@ -172,7 +172,7 @@ namespace SpeedMeasuremetRazor.Services
             }
 
             _speedMeasurements.Remove(toBeDelted);
-            JsonHelper.WriteMeasurements(_speedMeasurements,filepath);
+            JsonHelper.Write<SpeedMeasurement>(_speedMeasurements,filepath);
         }
         public List<SpeedMeasurement> CutInLicense()
         {
