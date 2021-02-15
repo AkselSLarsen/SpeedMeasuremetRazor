@@ -58,5 +58,113 @@
       "Address": "Maglegårdsvej 2",
       "Id": 1
     }
+  },
+  {
+    "Id": 6,
+    "Picture": "whitecar.jfif",
+    "Speed": 211,
+    "TimeStamp": "2021-02-15T13:07:54.8281189+01:00",
+    "Location": {
+      "Zone": 1,
+      "SpeedLimit": 110,
+      "Address": "Hillerødmotorvejen 123",
+      "Id": 2
+    }
+  },
+  {
+    "Id": 7,
+    "Picture": "olsenbanden.jfif",
+    "Speed": 31,
+    "TimeStamp": "2021-02-15T13:08:12.0324648+01:00",
+    "Location": {
+      "Zone": 1,
+      "SpeedLimit": 90,
+      "Address": "Frederiksborgvej 537",
+      "Id": 3
+    }
+  },
+  {
+    "Id": 8,
+    "Picture": "whitecar.jfif",
+    "Speed": 275,
+    "TimeStamp": "2021-02-15T13:08:32.0668981+01:00",
+    "Location": {
+      "Zone": 0,
+      "SpeedLimit": 50,
+      "Address": "Maglegårdsvej 2",
+      "Id": 1
+    }
+  },
+  {
+    "Id": 9,
+    "Picture": "c1.jfif",
+    "Speed": 218,
+    "TimeStamp": "2021-02-15T13:08:34.5841258+01:00",
+    "Location": {
+      "Zone": 0,
+      "SpeedLimit": 50,
+      "Address": "Maglegårdsvej 2",
+      "Id": 1
+    }
+  },
+  {
+    "Id": 10,
+    "Picture": "veteran.jfif",
+    "Speed": 15,
+    "TimeStamp": "2021-02-15T13:08:36.6891993+01:00",
+    "Location": {
+      "Zone": 0,
+      "SpeedLimit": 50,
+      "Address": "Maglegårdsvej 2",
+      "Id": 1
+    }
+  },
+  {
+    "Id": 11,
+    "Picture": "greycar.jfif",
+    "Speed": 292,
+    "TimeStamp": "2021-02-15T13:08:38.4817327+01:00",
+    "Location": {
+      "Zone": 0,
+      "SpeedLimit": 50,
+      "Address": "Maglegårdsvej 2",
+      "Id": 1
+    }
+  },
+  {
+    "Id": 12,
+    "Picture": "olsenbanden.jfif",
+    "Speed": 137,
+    "TimeStamp": "2021-02-15T13:13:36.7239334+01:00",
+    "Location": {
+      "Zone": 0,
+      "SpeedLimit": 50,
+      "Address": "Maglegårdsvej 2",
+      "Id": 1
+    }
+  },
+  {
+    "Id": 13,
+    "Picture": "whitetruck.jfif",
+    "Speed": 228,
+    "TimeStamp": "2021-02-15T13:13:38.6023691+01:00",
+    "Location": {
+      "Zone": 0,
+      "SpeedLimit": 50,
+      "Address": "Maglegårdsvej 2",
+      "Id": 1
+    }
+  },
+  {
+    "Id": 14,
+    "Picture": "c1.jfif",
+    "Speed": 283,
+    "TimeStamp": "2021-02-15T13:13:40.2991485+01:00",
+    "Location": {
+      "Zone": 0,
+      "SpeedLimit": 50,
+      "Address": "Maglegårdsvej 2",
+      "Id": 1
+    }
   }
 ]
