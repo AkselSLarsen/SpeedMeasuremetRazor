@@ -22,9 +22,9 @@
     <input type="submit" value="Press the button to take a photo" class="btn btn-primary" />
 </form>
 
-<img src="~/Images/camera-button.jpg" alt="Camera outline" />
+<img src="~/Images/camera-button.jpg" width="300" alt="Camera outline" />
 
-<div class="alert alert-info alert-primary">
+<div class="@(Model.message=="Look in the viewfinder and press the button" ? "alert alert-info alert-primary" : "alert alert-danger")">
     @Model.message
 </div>
 
