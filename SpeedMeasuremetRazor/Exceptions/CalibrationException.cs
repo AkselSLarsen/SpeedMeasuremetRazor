@@ -7,6 +7,9 @@ namespace SpeedMeasuremetRazor.Exceptions
 {
     public class CalibrationException : Exception
     {
+        public CalibrationException() {
+        }
+
         public CalibrationException(string message) : base(message)
         {
 

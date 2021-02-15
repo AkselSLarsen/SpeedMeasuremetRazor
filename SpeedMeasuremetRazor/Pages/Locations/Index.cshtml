@@ -1,4 +1,5 @@
 ﻿@page
+@using SpeedMeasuremetRazor.Helpers;
 @model SpeedMeasuremetRazor.Pages.Locations.IndexModel
 @{
 }
@@ -6,6 +7,18 @@
 <h1>List of Locations</h1>
 
 <p>Number of Locations: @Model.LocationRepo.GetAllLocations().Count</p>
+
+<form method="post" asp-page-handler="sort">
+    <div class="form-group">
+        <select name="sort">
+            <option value="1">Address</option>
+            <option value="2">Speed Limit</option>
+            <option value="3">Zone</option>
+        </select>
+    </div>
+
+    <input type="submit" value="Sort" class="btn btn-primary" />
+</form>
 
 <a asp-page="CreateLocation">Create New Location</a>
 
@@ -20,14 +33,18 @@
         </tr>
     </thead>
     <tbody>
-        @foreach(var location in Model.LocationRepo.GetAllLocations()) { 
-        <tr>
-            <td>@location.Id</td>
-            <td>@location.Address</td>
-            <td>@location.Zone</td>
-            <td>@location.SpeedLimit</td>
-            <td><a asp-route-id="@location.Id" asp-page="EditLocation">Edit or Delete Location</a></td>
-        </tr>
+        @foreach (var location in Model._locationSortedList) {
+            <tr>
+                <td>@location.Id</td>
+                <td>@location.Address</td>
+                <td>@location.Zone</td>
+                <td>@location.SpeedLimit</td>
+                <td><a asp-route-id="@location.Id" asp-page="EditLocation">Edit or Delete Location</a></td>
+            </tr>
         }
     </tbody>
 </table>
+
+@foreach (var exception in JsonHelper.GetReadExceptions) {
+    <h3 class="alert-danger">@exception.Message</h3>
+}

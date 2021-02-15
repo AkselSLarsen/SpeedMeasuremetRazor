@@ -4,14 +4,29 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using SpeedMeasuremetRazor.Exceptions;
 using SpeedMeasuremetRazor.Models;
+using SpeedMeasuremetRazor.Pages.Locations;
 
 namespace SpeedMeasuremetRazor.Helpers
 {
     public class JsonHelper
     {
+        private static List<Exception> _readExceptions = new List<Exception>();
+
+        public static List<Exception> GetReadExceptions {
+            get { return _readExceptions; }
+        }
+
         public static List<T> Read<T>(string filepath) {
-            string jsonString = File.ReadAllText(filepath);
+
+            string jsonString = "";
+            try {
+                jsonString = File.ReadAllText(filepath);
+            } catch(Exception e) {
+                _readExceptions.Add(e);
+            }
+            
             return JsonConvert.DeserializeObject<List<T>>(jsonString);
         }
 
