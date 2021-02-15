@@ -7,6 +7,18 @@
 
 <p>Number of Locations: @Model.LocationRepo.GetAllLocations().Count</p>
 
+<form method="post" asp-page-handler="sort">
+    <div class="form-group">
+        <select name="sort">
+            <option value="1">Address</option>
+            <option value="2">Speed Limit</option>
+            <option value="3">Zone</option>
+        </select>
+    </div>
+
+    <input type="submit" value="Sort" class="btn btn-primary" />
+</form>
+
 <a asp-page="CreateLocation">Create New Location</a>
 
 <table class="table">
@@ -20,7 +32,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach(var location in Model.LocationRepo.GetAllLocations()) { 
+        @foreach(var location in Model._locationSortedList) { 
         <tr>
             <td>@location.Id</td>
             <td>@location.Address</td>
