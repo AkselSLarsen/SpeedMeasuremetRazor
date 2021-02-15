@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SpeedMeasuremetRazor.Models
 {
-    public class Location
+    public class Location : IComparable<Location>
     {
         private int _id;
         private string _address;
@@ -46,5 +46,9 @@ namespace SpeedMeasuremetRazor.Models
             set { _id = value; }
         }
 
+        public int CompareTo(Location other)
+        {
+            return Address.CompareTo(other.Address);
+        }
     }
 }
