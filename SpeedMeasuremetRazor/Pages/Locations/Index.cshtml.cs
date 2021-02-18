@@ -31,8 +31,9 @@ namespace SpeedMeasuremetRazor.Pages.Locations
         {
         }
 
-        public IActionResult OnPostSort(int sort)
+        public IActionResult OnPostSort(int sort, string filter)
         {
+            
             if (sort == 1)
             {
                 _locationSortedList.Sort();
@@ -45,6 +46,12 @@ namespace SpeedMeasuremetRazor.Pages.Locations
             if (sort == 3)
             {
                 _locationSortedList.Sort(new LocationSortByZone());
+            }
+
+            if (filter != null)
+            {
+                Predicate<Location> predicate = location => { return location.Address.ToLower().Contains(filter.ToLower()); };
+                _locationSortedList = GenericFilter.Filter<Location>(_locationSortedList, predicate);
             }
 
             return Page();
