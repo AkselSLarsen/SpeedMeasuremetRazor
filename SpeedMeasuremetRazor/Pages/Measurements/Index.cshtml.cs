@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using SpeedMeasuremetRazor.Interfaces;
 using SpeedMeasuremetRazor.Services;
 using SpeedMeasuremetRazor.Models;
+using SpeedMeasuremetRazor.Helpers;
 
 namespace SpeedMeasuremetRazor.Pages.Measurements
 {
@@ -25,7 +26,7 @@ namespace SpeedMeasuremetRazor.Pages.Measurements
 
         }
 
-        public IActionResult OnPostFilter(int filter)
+        public IActionResult OnPostFilter(int filter, string textfilter)
         {
             if (filter == 1)
             {
@@ -45,6 +46,16 @@ namespace SpeedMeasuremetRazor.Pages.Measurements
             {
                 filterList = fullRepo.UnconditionalRevocation();
             }
+
+            if (textfilter != null)
+            {
+                Predicate<SpeedMeasurement> predicate = measurement =>
+                {
+                   return measurement.Location.Address.ToLower().Contains(textfilter.ToLower());
+                };
+                filterList = GenericFilter.Filter(filterList, predicate);
+            }
+            
             return Page();
         }
         public IActionResult OnPost(int deletemeasurement)

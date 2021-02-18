@@ -34,6 +34,9 @@
 </table>
 <form method="post" asp-page-handler="filter">
     <div class="form-group">
+        Filter: <input name="textfilter"/>
+    </div>
+    <div class="form-group">
         <select name="filter">
             <option value="1">All</option>
             <option value="2">CutInLicense</option>
@@ -42,7 +45,7 @@
         </select>
     </div>
 
-    <input type="submit" value="Filter" class="btn btn-primary" />
+    <input type="submit" value="Filter" class="btn btn-primary"/>
 </form>
 
 <table class="table">

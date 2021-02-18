@@ -166,5 +166,17 @@
       "Address": "Maglegårdsvej 2",
       "Id": 1
     }
+  },
+  {
+    "Id": 15,
+    "Picture": "olsenbanden.jfif",
+    "Speed": 119,
+    "TimeStamp": "2021-02-18T14:02:43.1246908+01:00",
+    "Location": {
+      "Zone": 0,
+      "SpeedLimit": 45,
+      "Address": "Gedvej 4",
+      "Id": 4
+    }
   }
 ]
