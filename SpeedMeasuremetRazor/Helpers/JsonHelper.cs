@@ -18,18 +18,47 @@ namespace SpeedMeasuremetRazor.Helpers
             get { return _readExceptions; }
         }
 
+        public static List<T> ReadAsync<T>(string filepath) {
+            string jsonString = "";
+            try {
+                Task<string> task = readAsync(filepath);
+                jsonString = task.Result;
+            } catch (Exception e) {
+                _readExceptions.Add(e);
+            }
+
+            return JsonConvert.DeserializeObject<List<T>>(jsonString);
+        }
+        private static async Task<string> readAsync(string filepath) {
+            string jsonString = "";
+            try {
+                jsonString = await File.ReadAllTextAsync(filepath);
+            } catch (Exception e) {
+                _readExceptions.Add(e);
+            }
+            return jsonString;
+        }
+
+        public static async void WriteAsync<T>(List<T> t, string filepath) {
+            string output = JsonConvert.SerializeObject(t, Newtonsoft.Json.Formatting.Indented);
+            await File.WriteAllTextAsync(filepath, output);
+        }
+
+        [Obsolete] //Use ReadAsync<T>(string) instead
         public static List<T> Read<T>(string filepath) {
 
             string jsonString = "";
             try {
                 jsonString = File.ReadAllText(filepath);
-            } catch(Exception e) {
+            } catch (Exception e) {
                 _readExceptions.Add(e);
             }
-            
+
             return JsonConvert.DeserializeObject<List<T>>(jsonString);
         }
 
+        [Obsolete]
+        //Use WriteAsync<T>(List<T>, string) instead
         public static void Write<T>(List<T> t, string filepath) {
             string output = JsonConvert.SerializeObject(t, Newtonsoft.Json.Formatting.Indented);
             File.WriteAllText(filepath, output);
