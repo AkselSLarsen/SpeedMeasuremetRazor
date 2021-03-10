@@ -10,20 +10,28 @@ namespace SpeedMeasuremetRazor.Services
 {
     public class JsonLocationRepo : ILocationRepo
     {
-        private string filepath = @"Data\LocationData.json";
+        private static string filepath = @"Data\LocationData.json";
         private List<Location> _locations;
+        private Task<List<Location>> _taskLocation = JsonHelper.ReadAsync<Location>(filepath);
         public JsonLocationRepo()
         {
-            _locations = JsonHelper.ReadAsync<Location>(filepath);
-
-            if(_locations == null) {
-                _locations = new List<Location>();
-            }
+            _ = Load();
+        }
+        private async Task Load() {
+            _locations = await _taskLocation;
         }
 
         public List<Location> GetAllLocations()
         {
-            return _locations;
+            if(_taskLocation.IsCompleted) {
+                if (_locations == null) {
+                    _locations = new List<Location>();
+                }
+                return _locations;
+            } else {
+                System.Threading.Thread.Sleep(10);
+                return GetAllLocations();
+            }
         }
 
         public void AddLocation(string address, int speedLimit, Zone zone)

@@ -18,25 +18,15 @@ namespace SpeedMeasuremetRazor.Helpers
             get { return _readExceptions; }
         }
 
-        public static List<T> ReadAsync<T>(string filepath) {
-            string jsonString = "";
-            try {
-                Task<string> task = readAsync(filepath);
-                jsonString = task.Result;
-            } catch (Exception e) {
-                _readExceptions.Add(e);
-            }
-
-            return JsonConvert.DeserializeObject<List<T>>(jsonString);
-        }
-        private static async Task<string> readAsync(string filepath) {
+        public async static Task<List<T>> ReadAsync<T>(string filepath) {
             string jsonString = "";
             try {
                 jsonString = await File.ReadAllTextAsync(filepath);
             } catch (Exception e) {
                 _readExceptions.Add(e);
             }
-            return jsonString;
+
+            return JsonConvert.DeserializeObject<List<T>>(jsonString);
         }
 
         public static async void WriteAsync<T>(List<T> t, string filepath) {

@@ -10,22 +10,29 @@ namespace SpeedMeasuremetRazor.Services
 {
     public class JsonSpeedMeasurementRepo : ISpeedMeasurementRepo
     {
-        private string filepath = @"data\SpeedMeasurementData.json";
+        private static string filepath = @"data\SpeedMeasurementData.json";
         private List<SpeedMeasurement> _speedMeasurements;
+        private Task<List<SpeedMeasurement>> _taskSpeedMeasurement = JsonHelper.ReadAsync<SpeedMeasurement>(filepath);
 
         public JsonSpeedMeasurementRepo()
         {
-            _speedMeasurements = JsonHelper.Read<SpeedMeasurement>(filepath);
-
-            if(_speedMeasurements == null)
-            {
-                _speedMeasurements = new List<SpeedMeasurement>();
-            }
+            _ = Load();
+        }
+        private async Task Load() {
+            _speedMeasurements = await _taskSpeedMeasurement;
         }
 
         public List<SpeedMeasurement> GetAllSpeedMeasurements()
         {
-            return _speedMeasurements;
+            if (_taskSpeedMeasurement.IsCompleted) {
+                if (_speedMeasurements == null) {
+                    _speedMeasurements = new List<SpeedMeasurement>();
+                }
+                return _speedMeasurements;
+            } else {
+                System.Threading.Thread.Sleep(10);
+                return GetAllSpeedMeasurements();
+            }
         }
 
         public void AddSpeedMeasurement(int speed, Location location, string imageName)
